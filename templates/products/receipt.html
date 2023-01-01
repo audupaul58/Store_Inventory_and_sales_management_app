@@ -1,7 +1,7 @@
 {% extends 'products/base.html'%} {% block content%}
 <br /><br>
 <div class="container">
-  <h1 class="card-header text-center">ALL RECEIPTS</h1><br>
+  <h3 class="card-header text-center">ALL RECEIPTS</h3><br>
   {% for sale in sales %}
   <div class="card">
     <div class="card-body">
@@ -16,7 +16,7 @@
           <input
             type="submit"
             value="Final Receipt"
-            class="btn btn-danger"
+            class="btn btn-dark"
             type="button"
           />
         </a>

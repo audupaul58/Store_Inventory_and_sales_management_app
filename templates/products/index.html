@@ -2,14 +2,14 @@
 <br></br>
 
 <div class = "container">
-  <h1 class= "text-center">ITEMS IN STOCK</h1>
+  <h3 class= "text-center">ITEMS IN STOCK</h3>
   <br>
 
   <div class = "container">
       <form action="{% url 'search' %}" method="get">
         <div class="input-group mb-3">
         <input type="text" class="form-control" name="q" placeholder="search here" >
-        <button class="btn btn-outline-success" type="submit" id="button-addon2">Search</button>
+        <button class="btn btn-outline-dark" type="submit" id="button-addon2">Search</button>
       </div>
     </form>
   </div>
@@ -35,7 +35,7 @@
         <td><a href="{% url 'product_detail' product.id %}"
               ><input
                 type="submit"
-                value="BUY ITEM"
+                value="Next"
                 class="btn btn-secondary btn"
                 type="button"
             /></a></td>
