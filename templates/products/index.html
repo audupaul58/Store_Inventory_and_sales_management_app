@@ -1,0 +1,47 @@
+{% extends 'products/base.html'%} {% block content%}
+<br></br>
+
+<div class = "container">
+  <h1 class= "text-center">ITEMS IN STOCK</h1>
+  <br>
+
+  <div class = "container">
+      <form action="{% url 'search' %}" method="get">
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" name="q" placeholder="search here" >
+        <button class="btn btn-outline-success" type="submit" id="button-addon2">Search</button>
+      </div>
+    </form>
+  </div>
+
+  <br>
+  <table class="table table-bordered">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Category</th>
+        <th scope="col">Item Name</th>
+        <th scope="col">Quantity</th>
+        <th scope="col">Unit Price(₦)</th>
+        <th scope = "col">Detail</th>
+      </tr>
+    </thead>
+    {% for product in products%}
+    <tbody>
+      <tr>    
+        <td>{{product.category_name}}</td>
+        <td>{{product.item_name}}</td>
+        <td>{{product.total_quantity}}</td>
+        <td>₦{{product.unit_price}}</td>
+        <td><a href="{% url 'product_detail' product.id %}"
+              ><input
+                type="submit"
+                value="BUY ITEM"
+                class="btn btn-secondary btn"
+                type="button"
+            /></a></td>
+      </tr>
+    </tbody>
+    {% endfor %}
+  </table>
+</div>
+{% endblock%}
